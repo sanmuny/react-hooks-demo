@@ -8,18 +8,30 @@ class ToDoList extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      items: [
-        { id: 0, text: 'Learn JavaScript', done: false },
-        { id: 1, text: 'Learn React', done: false },
-        { id: 2, text: 'Play around in JSFiddle', done: true },
-        { id: 3, text: 'Build something awesome', done: true },
-      ],
+      items: [],
     };
     this.handleCheck = this.handleCheckEvent.bind(this);
   }
 
   componentDidMount() {
     this.getToDoList();
+    let nr = 0;
+    this.state.items.forEach((item) => {
+      if (item.done === false) {
+        nr += 1;
+      }
+    });
+    document.title = `${nr} itmes left`;
+  }
+
+  componentDidUpdate() {
+    let nr = 0;
+    this.state.items.forEach((item) => {
+      if (item.done === false) {
+        nr += 1;
+      }
+    });
+    document.title = `${nr} itmes left`;
   }
 
   handleCheckEvent(id) {

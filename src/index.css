@@ -45,3 +45,15 @@ body {
   border-radius: 1rem;
   margin-bottom: 0.5rem;
 }
+
+.light {
+  color: #000000 !important;
+  fill: #000000 !important;
+  background-color: aqua !important
+}
+
+.dark {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  background-color: #222222 !important
+}
