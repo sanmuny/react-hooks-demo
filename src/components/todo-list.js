@@ -5,11 +5,13 @@ import {
   Checkbox, Typography, List, ListItem, ListItemText, CircularProgress,
 } from '@material-ui/core';
 import { ThemeContext } from '../context';
+import { useWindowSize } from '../hooks';
 
 const ToDoItems = () => {
   const [loading, setLoading] = useState(true);
   const [todos, setTodos] = useState([]);
   const theme = useContext(ThemeContext);
+  const width = useWindowSize();
   const nrTasksLeft = useMemo(() => {
     let nr = 0;
     todos.forEach((item) => {
@@ -53,6 +55,9 @@ const ToDoItems = () => {
     <div className="todo-list-container">
       <Typography variant="h6">
         Todos
+      </Typography>
+      <Typography variant="p">
+        {`Window Size: ${width}`}
       </Typography>
       {loading ? <div className="loading-container"><CircularProgress /></div>
         : (
