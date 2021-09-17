@@ -23,7 +23,7 @@ const ToDoItems = () => {
   }, [todos]);
 
   useEffect(() => {
-    document.title = `${nrTasksLeft} itmes left`;
+    document.title = `${nrTasksLeft} items left`;
   });
 
   useEffect(() => {
